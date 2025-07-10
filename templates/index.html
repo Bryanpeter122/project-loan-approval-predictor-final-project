@@ -1,0 +1,26 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Housing Price Prediction</title>
+    <style>
+        body { font-family: Arial; padding: 40px; }
+        form { display: grid; max-width: 300px; gap: 10px; }
+        input, button { padding: 8px; font-size: 16px; }
+    </style>
+</head>
+<body>
+    <h2>Housing Price Prediction</h2>
+    <form method="POST">
+        <label>Area (sq ft): <input type="number" name="area" required></label>
+        <label>Bedrooms: <input type="number" name="bedrooms" required></label>
+        <label>Bathrooms: <input type="number" name="bathrooms" required></label>
+        <label>Stories: <input type="number" name="stories" required></label>
+        <label>Parking Spaces: <input type="number" name="parking" required></label>
+        <button type="submit">Predict</button>
+    </form>
+    {% if prediction %}
+        <h3>Predicted Price: {{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>
